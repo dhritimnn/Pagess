@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no,">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <title>Pagess - Make an Order</title>
+  
+  <!-- HTML -->
+  
+  
+  <!-- Custom Styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    
+    html {
+      font-size: 16px;
+    }
+    
+    * {
+      user-select: none;
+      margin: 0;
+      padding: 0;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      color: #532F2F;
+    }
+    
+    body {
+      background: #9D6666;
+      height: 100dvh;
+      width: 100dvw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .frame {
+      background: #FFAEAE;
+      width: 90%;
+      text-align: center;
+      border-radius: 1rem;
+      padding-top: 3rem;
+    }
+    
+    .frame>h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: .5rem 0 0.2rem 0;
+      transform: rotate(-3deg);
+      text-decoration: underline 1.5px;
+    }
+    
+    .frame>h4 {
+      margin: 1rem 0 1rem 0;
+    }
+    
+    .content {
+      text-align: left;
+      margin: 0 3rem;
+      
+    }
+    
+    .thing {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    input {
+      width: 90%;
+      margin: .2rem auto;
+      background: #F4C9C9;
+      padding: .5rem .7rem;
+      border: .5px solid #4A2727;
+      outline: none;
+      border-radius: .6rem;
+    }
+    
+    .subbtn {
+      margin: .5rem;
+      margin-top: 1.5rem;
+      padding: 1.5rem .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      background: #EA9D9D;
+    }
+    
+    button {
+      border: none;
+      padding: .7rem 2rem;
+      border-radius: .7rem;
+      font-size: 1.03rem;
+      background: #994D4D;
+      color: white;
+    }
+    
+    input:hover {
+      background: white;
+    }
+    
+    button:active {
+      background: #6E2525;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <h3>Wanna make an <br>order??</h3>
+    <h4>~ Let us reach you ~</h4>
+    <div class="content">
+      <div class="thing">
+        <p>Your fullname: </p>
+        <input required type="text" name="" id="txt1">
+      </div>
+      <div class="thing">
+        <p>Phone/WhatsApp Number: </p>
+        <input required type="number" name="" id="txt2">
+      </div>
+    </div>
+    <p id="rqrditm" style="color: darkred; transform: translateX(-4rem); display: none;">*fill the details first</p>
+    
+    <div class="subbtn">
+      <button id="btn">Submit Details</button>
+    </div>
+    
+  </div>
+  <script>
+    let txt1 = document.querySelector('#txt1');
+    let txt2 = document.querySelector('#txt2');
+    let btn = document.querySelector('#btn');
+    emailjs.init("QzAHWmhPsqzpN7xbZ");
+    
+    function done(){
+      setTimeout(()=>{window.location.replace('/submitted.html')}, 3000)
+      
+    }
+    function emailjss() {
+      let parms = {
+        name : txt1.value,
+        message : txt2.value
+      }
+      
+      emailjs.send("service_wl0m5n7", "template_zm9hw1g", parms).then(done())
+      /*
+      document.getElementById("contact-form").addEventListener("submit", function(e) {
+e.preventDefault();
+
+emailjs.sendForm("service_wl0m5n7", "template_zm9hw1g", this)
+.then(() => alert("Email sent successfully!"))
+.catch(err => alert("Failed: " + err));
+});
+      */
+    }
+    btn.addEventListener('click', () => {
+      if (txt1.value == '' || txt2.value == '') {
+        document.querySelector('#rqrditm').style.display = 'block'
+      }
+      else { emailjss() }
+    })
+  </script>
+</body>
+
+</html>
