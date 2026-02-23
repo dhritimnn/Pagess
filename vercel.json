@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/makeorder", "destination": "/makeorder.html" },
+    { "source": "/submitted", "destination": "/submitted.html" }
+  ]
+}
