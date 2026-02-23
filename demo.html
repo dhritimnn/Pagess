@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  user-select: none;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --theme: #FFCAE1;
+  --a-color: #6F5050;
+  --def-color: #522828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+  color: var(--def-color);
+}
+
+body {
+  background: var(--theme);
+}
+
+body>* {
+  margin: 0 1.5rem 0 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+#headingnamejs {
+  font-weight: 500;
+  font-size: 1.35rem;
+}
+
+nav>ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+nav>ul>li>a {
+  text-decoration: none;
+  color: var(--a-color);
+  font-size: 1.1rem;
+}
+
+
+
+
+.copyright {
+  text-align: center;
+  margin: 7rem 0 2rem 0;
+  font-size: 0.77rem;
+  letter-spacing: 2px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#headerimgjs{
+  height: 10rem;
+  width: 10rem;
+  border-radius: 200px;
+}
+
+header .introduction {
+  margin: 1rem 0 1rem 0;
+}
+
+#headernamejs {
+  font-weight: 500;
+}
+
+#headerpjs {
+  margin-top: .2rem;
+  font-size: 1.15rem;
+}
+
+section {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+section :first-child{
+  font-size: 1.35rem;
+  border-bottom: 2px solid #42445A35;
+  margin-bottom: 1.5rem;
+  font-weight: 480;
+}
+
+section p{ 
+  line-height: 150%;
+  text-indent: 4rem;
+  text-align: justify;
+  padding-left: 0.7rem;
+  font-weight: 400;
+}
+  </style>
+  <title>Frame</title>
+</head>
+
+<body>
+  <nav>
+    <p class="heading" id="headingnamejs"></p>
+    <ul>
+      <li><a href="#scrolltoabout">About</a></li>
+      <li><a href="#scrolltocontact">Contact</a></li>
+    </ul>
+  </nav>
+  <header>
+    <img id="headerimgjs" alt="">
+    <div class="introduction">
+      <h1 id="headernamejs"></h3>
+        <p id="headerpjs"></p>
+        <br>
+    </div>
+  </header>
+  <section style="margin-top: 3rem;" id="scrolltoabout">
+    <h3>About&nbsp;Me</h3>
+    <p id="aboutjs"></p>
+  </section>
+  <section id="scrolltocontact">
+    <h3>Contact</h3>
+    <p id="contactjs" style="text-indent: 0;"></p>
+  </section>
+  <section></section>
+  <div class="copyright" id="copyrightnamejs">© copyright 2026, </div>
+  
+  
+  <script>
+    
+    let frontendobject = {
+  headingname : 'Portfolio',
+  headerimg : 'https://res.cloudinary.com/dfqtra5dg/image/upload/fl_preserve_transparency/v1771864277/file_00000000bc407207b3e2c7707dea9461_2_rkmo7k.jpg?_s=public-apps',
+  headername : 'Elisa Reywolt',
+  headerp : 'Student/Freelancer',
+  about : `Hi, I'm Elisa Roywolt - a student by necessity, a freelancer by choice, and a storyteller somewhere in between.
+<br><br>
+
+Welcome to my corner of the internet.`,
+  contact : 'email: &nbsp;elisaroywolt@v.app <br> contact: &nbsp;+91 9999999999',
+  copyright : 'Elisa',
+}
+
+
+
+
+function run(){
+  document.querySelector('#aboutjs').innerHTML = frontendobject.about;
+  document.querySelector('#contactjs').innerHTML = frontendobject.contact;
+  document.querySelector('#headingnamejs').innerHTML = frontendobject.headingname;
+  document.querySelector('#headernamejs').innerHTML = frontendobject.headername;
+  document.querySelector('#headerpjs').innerHTML = frontendobject.headerp;
+  document.querySelector('#copyrightnamejs').innerHTML += frontendobject.copyright;
+  document.querySelector('#headerimgjs').src = frontendobject.headerimg;
+}
+
+run()
+  </script>
+</body>
+
+</html>
