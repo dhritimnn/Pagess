@@ -3,7 +3,7 @@ let frontendobject = {
   headerimg : 'img/profile.webp',
   headername : 'Pagess Bajali',
   headerp : 'Get Your Own Page',
-  about : ``,
+  about : `Page is in construction. Will be ready till 27feb`,
   contact : '',
   copyright : 'Pagess',
 }
