@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  user-select: none;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --theme: #FFB3B4;
+  --a-color: ;
+  --def-color: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  color: var(--def-color);
+}
+
+body {
+  background: var(--theme);
+}
+
+body>* {
+  margin: 0 1.75rem 0 1.75rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+#headingnamejs {
+  font-weight: 500;
+  font-size: 1.35rem;
+}
+
+nav>ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav>ul>li>a {
+  text-decoration: none;
+  color: var(--a-color);
+  font-size: 1.1rem;
+}
+
+
+
+
+.copyright {
+  text-align: center;
+  margin: 7rem 0 2rem 0;
+  font-size: 0.77rem;
+  letter-spacing: 2px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#headerbg {
+  background: rgba(246, 161, 162, 1);
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  border-radius: 40px;
+}
+#headerimgjs{
+  height: 10rem;
+  width: 10rem;
+  border-radius: 40px;
+}
+
+header .introduction {
+  margin: 1rem 0 1rem 0;
+  background: linear-gradient(60deg, #00000000, rgba(246, 161, 162, 1));
+  width: 100%;
+  border-radius: 40px;
+  padding: 1rem 0 .5rem 0;
+}
+
+#headernamejs {
+  font-weight: 500;
+}
+
+#headerpjs {
+  margin-top: .2rem;
+  font-size: 1.15rem;
+}
+
+section {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+section :first-child{
+  font-size: 1.35rem;
+  border-bottom: 2px solid #42445A35;
+  margin-bottom: 1.5rem;
+}
+
+section p{ 
+  line-height: 170%;
+  text-indent: 4rem;
+  text-align: justify;
+  padding-left: 0.7rem;
+}
+
+
+#trans1 {
+  height: 10rem;
+  width: 100%;
+  background: linear-gradient(#00000000 ,#8D5A5A);
+  margin: 0;
+}
