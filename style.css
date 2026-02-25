@@ -11,8 +11,8 @@
 
 :root {
   --theme: #FFB3B4;
-  --a-color: ;
-  --def-color: ;
+  --a-color: #803843;
+  --def-color: #4C1920;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
 }
 
 body>* {
-  margin: 0 1.75rem 0 1.75rem;
+  padding: 0 1.75rem 0 1.75rem;
 }
 
 nav {
@@ -79,12 +79,13 @@ header {
 }
 
 #headerbg {
-  background: rgba(246, 161, 162, 1);
+  background: #F6A1A2;
   width: 100%;
   padding: 1rem 0 1rem 0;
   border-radius: 40px;
 }
-#headerimgjs{
+
+#headerimgjs {
   height: 10rem;
   width: 10rem;
   border-radius: 40px;
@@ -108,17 +109,18 @@ header .introduction {
 }
 
 section {
-  margin-top: 6rem;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-section :first-child{
-  font-size: 1.35rem;
+section>h3 {
+  font-size: 1.45rem;
   border-bottom: 2px solid #42445A35;
   margin-bottom: 1.5rem;
+  font-weight: 450;
 }
 
-section p{ 
+section> p {
   line-height: 170%;
   text-indent: 4rem;
   text-align: justify;
@@ -127,9 +129,45 @@ section p{
 
 
 #trans1 {
-  height: 10rem;
+  height: 5rem;
   width: 100%;
-  background: linear-gradient(#00000000 ,#8D5A5A);
+  background: linear-gradient(#00000000, #F6A1A2);
   margin: 0;
   padding: 0;
+}
+
+#projects {
+  background: #F6A1A2;
+  overflow-x: hidden;
+}
+
+#projectsjs {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 3rem;
+}
+
+.pjchild {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 1rem 3rem 1rem;
+  background: #ffffff30;
+  border-radius: 20px;
+  gap: 1.5rem;
+}
+
+.pjchild img {
+  width: 60dvw;
+  border-radius: 25px;
+}
+
+.pjchild p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-indent: 0;
 }
