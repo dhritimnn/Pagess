@@ -8,8 +8,8 @@ let frontendobject = {
   copyright : 'Pagess',
   
   projects : [
-    ['pagessbajali.vercel.app', 'slide1.png'],
-    ['pagessbajali.vercel.app', 'slide1.png'],
+    ['pagessbajali.vercel.app/demo', 'slide1.jpg'],
+    ['pagessbajali.vercel.app/demo2', 'slide1.jpg'],
   ]
 }
 
@@ -25,12 +25,14 @@ function run(){
   document.querySelector('#copyrightnamejs').innerHTML += frontendobject.copyright;
   document.querySelector('#headerimgjs').src = frontendobject.headerimg;
   
+  
+  frontendobject.projects.reverse();
   let projectchildframe = '';
   for (let i = 0; i<frontendobject.projects.length;i++) {
     let gett = frontendobject.projects[i];
     let x = gett[0]
     let y = gett[1]
-    projectchildframe+= `<div class="pjchild">
+    projectchildframe+= `<div class="pjchild" onclick='window.location.href="https://${x}"'>
         <img src="img/projectimg/${y}" alt="">
         <p>${x}</p>
       </div>`;
