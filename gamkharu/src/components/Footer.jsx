@@ -1,0 +1,76 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export default function Footer() {
+  const navigate = useNavigate();
+  return (
+    <footer style={{ background: '#2c2f2c', color: '#ccc', fontSize: '.9rem' }}>
+      <div style={{ padding: '2rem 1.5rem 0' }}>
+        <div style={{ textAlign: 'center', marginBottom: '1.75rem', paddingBottom: '1.75rem', borderBottom: '1px solid #3a3d3a' }}>
+          <h2 style={{ color: 'white', fontSize: '1.5rem', marginBottom: '.4rem' }}>Gamkharu</h2>
+          <p style={{ color: '#FF6435', fontStyle: 'italic', fontSize: '.9rem', margin: 0 }}>
+            <i>"Where tradition meets elegance. Crafted for you, by Gamkharu."</i>
+          </p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p style={{ color: 'white', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '.75rem' }}>Quick Links</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '.4rem' }}>
+              {[['/', 'Home'], ['/search?q=featured', 'Featured'], ['/faq', 'FAQ'], ['/faq', 'Terms & Conditions']].map(([path, label]) => (
+                <span key={label} onClick={() => navigate(path)} style={{ color: '#ccc', cursor: 'pointer', fontSize: '.9rem' }}>{label}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p style={{ color: 'white', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '.75rem' }}>Categories</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '.4rem' }}>
+              {[['clothing', 'Clothing'], ['jewelry', 'Jewelry'], ['accessories', 'Accessories']].map(([cat, label]) => (
+                <span key={cat} onClick={() => navigate(`/categories/${cat}`)} style={{ color: '#ccc', cursor: 'pointer', fontSize: '.9rem' }}>{label}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p style={{ color: 'white', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '.75rem' }}>Contact</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '.5rem' }}>
+              <a href="tel:+919395229608" style={{ color: '#ccc', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.9rem' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6435" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+                </svg>
+                +91 93952 29608
+              </a>
+              <a href="https://wa.me/9395229608" style={{ color: '#ccc', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.9rem' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF6435"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.535 5.856L.057 23.571a.75.75 0 0 0 .92.92l5.715-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.698-.502-5.25-1.383l-.374-.217-3.892 1.005 1.005-3.892-.217-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                WhatsApp Us
+              </a>
+              <a href="mailto:gamkharu@email.com" style={{ color: '#ccc', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.9rem' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6435" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                gamkharu@email.com
+              </a>
+            </div>
+          </div>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <p style={{ color: 'white', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '.75rem' }}>Follow Us</p>
+            <div style={{ display: 'flex', gap: '.75rem' }}>
+              {[
+                { href: 'https://www.instagram.com/gamkharu_boutique05/', label: 'Instagram', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg> },
+                { href: 'https://www.facebook.com/gitika.barman.594317/', label: 'Facebook', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> },
+                { href: 'https://wa.me/9395229608', label: 'WhatsApp', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.535 5.856L.057 23.571a.75.75 0 0 0 .92.92l5.715-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.698-.502-5.25-1.383l-.374-.217-3.892 1.005 1.005-3.892-.217-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> }
+              ].map(s => (
+                <a key={s.label} href={s.href} aria-label={s.label}
+                  style={{ width: '2.4rem', height: '2.4rem', borderRadius: '50%', background: '#FF6435', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{ borderTop: '1px solid #3a3d3a', padding: '1rem 1.5rem', textAlign: 'center', fontSize: '.75rem', color: '#666' }}>
+        © 2025 Gamkharu, Bajali. All rights reserved.
+      </div>
+    </footer>
+  );
+}
